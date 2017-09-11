@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _4.Sortland
 {
@@ -22,9 +18,9 @@ namespace _4.Sortland
             return file.ReadLine().Split(' ').Select(s => double.Parse(s, CultureInfo.InvariantCulture)).ToArray();
         }
 
-        private static void WriteToFile(string result, string evidence)
+        private static void WriteToFile(string result)
         {
-            System.IO.File.WriteAllText(@"output.txt", $"{result}{Environment.NewLine}{evidence}");
+            System.IO.File.WriteAllText(@"output.txt", $"{result}");
         }
 
         private static double[] Array { get; set; }
@@ -44,14 +40,14 @@ namespace _4.Sortland
             }
         }
 
-        private static void Swap(long i, long j)
+        private static void Swap(int i, int j)
         {
             var temp = Array[i];
             Array[i] = Array[j];
             Array[j] = temp;
         }
 
-        private static void SwapPerson(long i, long j)
+        private static void SwapPerson(int i, int j)
         {
             var temp = PNumbers[i];
             PNumbers[i] = PNumbers[j];
@@ -61,11 +57,11 @@ namespace _4.Sortland
         static void Main(string[] args)
         {
             Array = ReadFromFile();
-            PNumbers = Enumerable.Range(1, Array.Length) as int[];
+            PNumbers = Enumerable.Range(1, Array.Length).ToArray();
 
             HelloFromSortland();
 
-            WriteToFile(string.Join(" ", PNumbers), string.Join(" ", Array));
+            WriteToFile(string.Join(" ", $"{PNumbers[0]} {PNumbers[PNumbers.Length/2]} {PNumbers[PNumbers.Length-1]}"));
         }
     }
 }
