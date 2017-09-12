@@ -21,7 +21,7 @@ namespace _3.Sort_by_insert
 
         private static void WriteToFile(string result, string evidence)
         {
-            System.IO.File.WriteAllText(@"output.txt", $"{result}{Environment.NewLine}{evidence}");
+            System.IO.File.WriteAllText(@"output.txt", result + Environment.NewLine + evidence);
         }
 
         private static long[] Array { get; set; }

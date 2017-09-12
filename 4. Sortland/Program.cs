@@ -20,7 +20,7 @@ namespace _4.Sortland
 
         private static void WriteToFile(string result)
         {
-            System.IO.File.WriteAllText(@"output.txt", $"{result}");
+            System.IO.File.WriteAllText(@"output.txt", result);
         }
 
         private static double[] Array { get; set; }
@@ -61,7 +61,7 @@ namespace _4.Sortland
 
             HelloFromSortland();
 
-            WriteToFile(string.Join(" ", $"{PNumbers[0]} {PNumbers[PNumbers.Length/2]} {PNumbers[PNumbers.Length-1]}"));
+            WriteToFile(PNumbers[0] + " " + PNumbers[PNumbers.Length / 2] + " " + PNumbers[PNumbers.Length - 1]);
         }
     }
 }
