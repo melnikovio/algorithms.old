@@ -25,7 +25,7 @@ namespace _5.SwapSecretary
 
         private static StreamWriter Writer { get; set; }
 
-        private static void WriteToFile(string line)
+        private static void TellSecretarySexyPhrase(string line)
         {
             Writer.WriteLine(line);
         }
@@ -34,18 +34,24 @@ namespace _5.SwapSecretary
 
         private static void SwapNumbersWithSexySecretary()
         {
-            for (var i = 1; i < Array.Length; i++)
+            for (var i = 0; i < Array.Length; i++)
             {
-                string pleaseTellMeAboutYourself = null;
-                var j = i - 1;
-                while (j >= 0 && Array[j] > Array[j + 1])
+                var minumalValueIndex = 0;
+                var minimalValue = Array[i];
+                for (var j = i + 1; j < Array.Length; j++)
                 {
-                    Swap(j + 1, j);
-                    //pleaseTellMeAboutYourself = "Swap elements at indices " + (j+1) + " and " + (i+1) + ".";
-                    j--;
+                    if (minimalValue > Array[j])
+                    {
+                        minimalValue = Array[j];
+                        minumalValueIndex = j;
+                    }
                 }
-                if (!string.IsNullOrEmpty(pleaseTellMeAboutYourself))
-                    WriteToFile(pleaseTellMeAboutYourself);
+                if (minumalValueIndex != 0)
+                {
+                    Swap(i, minumalValueIndex);
+
+                    TellSecretarySexyPhrase("Swap elements at indices " + (i + 1) + " and " + (minumalValueIndex + 1) + ".");
+                }
             }
         }
 
@@ -54,8 +60,6 @@ namespace _5.SwapSecretary
             var temp = Array[i];
             Array[i] = Array[j];
             Array[j] = temp;
-
-            WriteToFile("Swap elements at indices " + (j + 1) + " and " + (i + 1) + ".");
         }
 
         static void Main(string[] args)
@@ -66,8 +70,8 @@ namespace _5.SwapSecretary
 
             SwapNumbersWithSexySecretary();
 
-            WriteToFile("No more swaps needed.");
-            WriteToFile(string.Join(" ", Array));
+            TellSecretarySexyPhrase("No more swaps needed.");
+            TellSecretarySexyPhrase(string.Join(" ", Array));
 
             Writer.Close();
         }
