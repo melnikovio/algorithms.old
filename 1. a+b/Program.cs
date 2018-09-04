@@ -8,7 +8,7 @@ namespace _1.a_b
         {
             System.IO.StreamReader file = new System.IO.StreamReader(@"input.txt");
        
-            return file.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            return file.ReadLine()?.Split(' ').Select(int.Parse).ToArray();
         }
 
         private static void WriteToFile(string result)
@@ -16,7 +16,7 @@ namespace _1.a_b
             System.IO.File.WriteAllText(@"output.txt", result);
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             var input = ReadFromFile();
             var result = input.Sum();

@@ -1,32 +1,31 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Linq;
 
 namespace _4.Sortland
 {
     class Program
     {
-        /// <summary>
-        /// We are sure that file is exist and filled with correct values
-        /// </summary>
-        /// <returns></returns>
-        private static double[] ReadFromFile()
+        #region file operations
+        private static double[] ReadFromFile(out int arrayLength)
         {
             var file = new System.IO.StreamReader(@"input.txt");
 
-            var arrayLength = long.Parse(file.ReadLine()); //still don't know for what reason I need this
-
-            return file.ReadLine().Split(' ').Select(s => double.Parse(s, CultureInfo.InvariantCulture)).ToArray();
+            arrayLength = int.Parse(file.ReadLine() ?? throw new InvalidOperationException());
+            
+            return file.ReadLine()?.Split(' ').Select(s => double.Parse(s, CultureInfo.InvariantCulture)).ToArray();
         }
 
         private static void WriteToFile(string result)
         {
             System.IO.File.WriteAllText(@"output.txt", result);
         }
+        #endregion
 
         private static double[] Array { get; set; }
         private static int[] PNumbers { get; set; }
 
-        private static void HelloFromSortland()
+        private static void HelloFromSortLand()
         {
             for (var i = 1; i < Array.Length; i++)
             {
@@ -54,12 +53,12 @@ namespace _4.Sortland
             PNumbers[j] = temp;
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
-            Array = ReadFromFile();
-            PNumbers = Enumerable.Range(1, Array.Length).ToArray();
+            Array = ReadFromFile(out var arrayLength);
+            PNumbers = Enumerable.Range(1, arrayLength).ToArray();
 
-            HelloFromSortland();
+            HelloFromSortLand();
 
             WriteToFile(PNumbers[0] + " " + PNumbers[PNumbers.Length / 2] + " " + PNumbers[PNumbers.Length - 1]);
         }

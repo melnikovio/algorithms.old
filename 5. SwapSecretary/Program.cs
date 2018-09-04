@@ -5,22 +5,15 @@ using System.Linq;
 
 namespace _5.SwapSecretary
 {
-    /// <summary>
-    /// Please take a seat on this couch
-    /// </summary>
     class Program
     {
-        /// <summary>
-        /// We are sure that file is exist and filled with correct values
-        /// </summary>
-        /// <returns></returns>
-        private static long[] ReadFromFile()
+        private static long[] ReadFromFile(out int arrayLength)
         {
-            var file = new System.IO.StreamReader(@"input.txt");
+            var file = new StreamReader(@"input.txt");
 
-            var arrayLength = long.Parse(file.ReadLine()); //still don't know for what reason I need this
+            arrayLength = int.Parse(file.ReadLine() ?? throw new InvalidOperationException());
 
-            return file.ReadLine().Split(' ').Select(s => long.Parse(s, CultureInfo.InvariantCulture)).ToArray();
+            return file.ReadLine()?.Split(' ').Select(s => long.Parse(s, CultureInfo.InvariantCulture)).ToArray();
         }
 
         private static StreamWriter Writer { get; set; }
@@ -62,9 +55,9 @@ namespace _5.SwapSecretary
             Array[j] = temp;
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
-            Array = ReadFromFile();
+            Array = ReadFromFile(out _);
 
             Writer = File.CreateText(@"output.txt");
 
