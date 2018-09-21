@@ -22,18 +22,18 @@ namespace _4.Sortland
         }
         #endregion
 
-        private static double[] Array { get; set; }
-        private static int[] PNumbers { get; set; }
+        private static double[] Salary { get; set; }
+        private static int[] Citizens { get; set; }
 
         private static void HelloFromSortLand()
         {
-            for (var i = 1; i < Array.Length; i++)
+            for (var i = 1; i < Salary.Length; i++)
             {
                 var j = i - 1;
-                while (j >= 0 && Array[j] > Array[j + 1])
+                while (j >= 0 && Salary[j] > Salary[j + 1])
                 {
                     Swap(j + 1, j);
-                    SwapPerson(j + 1, j);
+                    SwapCitizen(j + 1, j);
                     j--;
                 }
             }
@@ -41,26 +41,26 @@ namespace _4.Sortland
 
         private static void Swap(int i, int j)
         {
-            var temp = Array[i];
-            Array[i] = Array[j];
-            Array[j] = temp;
+            var temp = Salary[i];
+            Salary[i] = Salary[j];
+            Salary[j] = temp;
         }
 
-        private static void SwapPerson(int i, int j)
+        private static void SwapCitizen(int i, int j)
         {
-            var temp = PNumbers[i];
-            PNumbers[i] = PNumbers[j];
-            PNumbers[j] = temp;
+            var temp = Citizens[i];
+            Citizens[i] = Citizens[j];
+            Citizens[j] = temp;
         }
 
         static void Main()
         {
-            Array = ReadFromFile(out var arrayLength);
-            PNumbers = Enumerable.Range(1, arrayLength).ToArray();
+            Salary = ReadFromFile(out var arrayLength);
+            Citizens = Enumerable.Range(1, arrayLength).ToArray();
 
             HelloFromSortLand();
 
-            WriteToFile(PNumbers[0] + " " + PNumbers[PNumbers.Length / 2] + " " + PNumbers[PNumbers.Length - 1]);
+            WriteToFile(Citizens[0] + " " + Citizens[Citizens.Length / 2] + " " + Citizens[Citizens.Length - 1]);
         }
     }
 }
