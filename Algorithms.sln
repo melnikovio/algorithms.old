@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sorting By Insert", "Sorting By Insert", "{20E506DD-FF10-4408-B769-A8370E0C388B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Insertion Sort", "Insertion Sort", "{20E506DD-FF10-4408-B769-A8370E0C388B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. a+b", "Sorting By Insert\1. a+b\1. a+b.csproj", "{4A4D10E2-0193-48EB-9777-E8569AD03D76}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Merge Sort", "Merge Sort", "{50D6E790-1BDF-4C1B-A686-94733C172F84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. a+squareb", "Sorting By Insert\2. a+squareb\2. a+squareb.csproj", "{EAC7F94B-1A74-4D07-BCE0-65ECAB9D3EBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. a+b", "Insertion Sort\1. a+b\1. a+b.csproj", "{4A4D10E2-0193-48EB-9777-E8569AD03D76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Sort by insert", "Sorting By Insert\3. Sort by insert\3. Sort by insert.csproj", "{11496760-1E97-46BA-A67C-48FFBF3275DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. a+squareb", "Insertion Sort\2. a+squareb\2. a+squareb.csproj", "{EAC7F94B-1A74-4D07-BCE0-65ECAB9D3EBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Sortland", "Sorting By Insert\4. Sortland\4. Sortland.csproj", "{271A441C-DB1B-4421-9C2B-35953377BD5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. Sort by insert", "Insertion Sort\3. Sort by insert\3. Sort by insert.csproj", "{11496760-1E97-46BA-A67C-48FFBF3275DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. SwapSecretary", "Sorting By Insert\5. SwapSecretary\5. SwapSecretary.csproj", "{59991CE9-56C2-4F52-9141-7039272C4B59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. Sortland", "Insertion Sort\4. Sortland\4. Sortland.csproj", "{271A441C-DB1B-4421-9C2B-35953377BD5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5. SwapSecretary", "Insertion Sort\5. SwapSecretary\5. SwapSecretary.csproj", "{59991CE9-56C2-4F52-9141-7039272C4B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Merge Sort", "Merge Sort\1. Merge Sort\1. Merge Sort.csproj", "{56583E54-1C9D-4E83-9602-ED4342D0949F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +45,10 @@ Global
 		{59991CE9-56C2-4F52-9141-7039272C4B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59991CE9-56C2-4F52-9141-7039272C4B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59991CE9-56C2-4F52-9141-7039272C4B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56583E54-1C9D-4E83-9602-ED4342D0949F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56583E54-1C9D-4E83-9602-ED4342D0949F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56583E54-1C9D-4E83-9602-ED4342D0949F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56583E54-1C9D-4E83-9602-ED4342D0949F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,7 @@ Global
 		{11496760-1E97-46BA-A67C-48FFBF3275DE} = {20E506DD-FF10-4408-B769-A8370E0C388B}
 		{271A441C-DB1B-4421-9C2B-35953377BD5C} = {20E506DD-FF10-4408-B769-A8370E0C388B}
 		{59991CE9-56C2-4F52-9141-7039272C4B59} = {20E506DD-FF10-4408-B769-A8370E0C388B}
+		{56583E54-1C9D-4E83-9602-ED4342D0949F} = {50D6E790-1BDF-4C1B-A686-94733C172F84}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {062115D5-C667-4E84-929F-B42632D83E33}
